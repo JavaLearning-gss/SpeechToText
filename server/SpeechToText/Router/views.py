@@ -31,13 +31,13 @@ def index(request):
         # global data
             data=return_file['result']
             print(data)
-            return JsonResponse(data)
+            return HttpResponse(data)
         else:
             return HttpResponse('error')
     else:
         # global data
         print(data)
         if len(data)>0:
-            return JsonResponse(data)
+            return HttpResponse(data)
         return HttpResponse('error')
     # return HttpResponse('ok')

@@ -19,25 +19,28 @@ def index(request):
     count += 1
     # print(count)
     if request.method == "POST":
-        print(request.FILES.get("audioData", None))
-        print(type(request.FILES['audioData']))
+        # print(request.FILES.get("audioData", None))
+        # print(type(request.FILES['audioData']))
 
-        default_storage.save('audio/' + '123' + '.wav', ContentFile(request.FILES['audioData'].read()))
+        # default_storage.save('audio/' + '123' + '.wav', ContentFile(request.FILES['audioData'].read()))
 
-        # """ 你的 APPID AK SK """
-        # APP_ID = '16710665'
-        # API_KEY = 'lAm7pwiagTIHIqksaTRQILnL'
-        # SECRET_KEY = 'w4KIhKEKrmiNq4kBtD7Cu0hVjXgO2b1N'
+        # audio_file=open(r'audio/123.wav','rb').read()
 
-        # client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
+        """ 你的 APPID AK SK """
+        APP_ID = '16710665'
+        API_KEY = 'lAm7pwiagTIHIqksaTRQILnL'
+        SECRET_KEY = 'w4KIhKEKrmiNq4kBtD7Cu0hVjXgO2b1N'
 
-        # return_file = client.asr(request.FILES.get("audioData", None).read(), 'wav', 16000, {
-        #     'dev_pid': 1536,
-        # })
-        # print(return_file)
-        return HttpResponse('POST')
+        client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
+
+        return_file = client.asr(request.FILES['audioData'].read(), 'wav', 16000, {
+            'dev_pid': 1536,
+        })
+        print(return_file)
+        data=return_file.get('result')
+        return HttpResponse(return_file.get('result'))
     else:
-        return HttpResponse('GET')
+        return HttpResponse(data)
         # print(request.method)
         # audio_file=open(r'../../demo1.wav','rb').read()
         # print(audio_file)

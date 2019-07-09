@@ -13,8 +13,10 @@ def index(request):
     count+=1
     print(count)
     if request.method == "POST":
-        print(request.FILES)
-        Blob = request.FILES['audioData']
+        # print(request.method)
+        audio_file=open(r'../../demo1.wav','rb').read()
+        # print(audio_file)
+        # Blob = request.FILES['audioData']
 
         """ 你的 APPID AK SK """
         APP_ID = '16710665'
@@ -23,12 +25,12 @@ def index(request):
 
         client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
-        return_file = client.asr(Blob.file.read(), 'wav', 16000, {
+        return_file = client.asr(audio_file, 'wav', 16000, {
             'dev_pid': 1536,
         })
-        if return_file['err_no']==0:
-
         # global data
+        print(return_file)
+        if return_file['err_no']==0:
             data=return_file['result']
             print(data)
             return HttpResponse(data)

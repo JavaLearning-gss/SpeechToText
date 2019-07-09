@@ -154,7 +154,8 @@
                 // console.log(xhr.readyState);
                 if (xhr.readyState == 4) {
                     // 把服务器端返回的信息显示到页面上
-                    alert(xhr.responseText);
+                    // alert(xhr.responseText);
+                    document.getElementById('demo').value = xhr.responseText;
                 }
             }
             xhr.open('POST', url, true);

@@ -44,7 +44,7 @@ function stopRecording(a, b) {
     // console.info(WAV_audio);
     // base64_WAV_audio = blobToDataURL(WAV_audio);
     uploadAudio();
-    recorder.play(audio);
+    // recorder.play(audio);
 }
 
 function playRecording() {

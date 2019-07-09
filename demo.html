@@ -30,7 +30,7 @@
 
     <!-- 引入JSON -->
     <!-- <script src="js/json.js"></script>   -->
-<!-- 
+    <!-- 
     <script type="text/javascript" src="jQuery/jquery-1.7.2.js"></script>
     <script type="text/javascript" src="jQuery/jquery.json.js"></script>
     <script type="text/javascript" src="jQuery/md5.js"></script> -->
@@ -91,7 +91,7 @@
             z-index: 2;
         }
 
-        .form-signin input[type="email"] {
+        /* .form-signin input[type="email"] {
             margin-bottom: -1px;
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 0;
@@ -101,22 +101,30 @@
             margin-bottom: 10px;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-        }
+        } */
     </style>
 </head>
 
 <body class="text-center">
     <form class="form-signin">
         <img class="mb-4" src="./speak.png" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please speeching</h1>
+        <h1 class="h3 mb-3 font-weight-normal">你觉得<b><u>Nicky</u></b>怎么样？</h1>
 
-        <!-- <audio controls autoplay></audio> -->
-        <audio controls autoplay style="display: block;"></audio>
-        <input id="start" type="button" value="请开始你的表演" class="btn btn-primary btn-lg" onclick="startRecording('start','stop')"/>
-        <input id="stop" type="button" value="表演结束" class="btn btn-danger btn-lg" onclick="stopRecording('stop','start')" style="display: none;"/>
-        <!-- 录音js -->
-        <script src="./HZRecorder.js"></script>
-        <script src="./myRecorder.js"></script>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="我觉得……" id="demo" name="inputArea">
+            <div class="input-group-append">
+                <audio controls autoplay style="display: none;"></audio>
+                <button id="start" type="button" class="btn btn-primary"
+                    onclick="startRecording('start','stop')" style="border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;">不吐不快</button>
+                <button id="stop" type="button" class="btn btn-danger"
+                    onclick="stopRecording('stop','start')" style="display: none;border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem; ">就到这边</button>
+                <!-- 录音js -->
+                <script src="./HZRecorder.js"></script>
+                <script src="./myRecorder.js"></script>
+            </div>
+        </div>
     </form>
 </body>
 

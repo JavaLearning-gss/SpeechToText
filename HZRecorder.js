@@ -5,8 +5,8 @@
 
     var HZRecorder = function (stream, config) {
         config = config || {};
-        config.sampleBits = config.sampleBits || 8;      //采样数位 8, 16
-        config.sampleRate = config.sampleRate || 16000;   //采样率(1/6 44100)
+        config.sampleBits =  16;      //采样数位 8, 16
+        config.sampleRate =  16000;   //采样率(1/6 44100)
 
         var context = new (window.webkitAudioContext || window.AudioContext)();
         var audioInput = context.createMediaStreamSource(stream);
@@ -17,7 +17,7 @@
             size: 0          //录音文件长度
             , buffer: []     //录音缓存
             , inputSampleRate: context.sampleRate    //输入采样率
-            , inputSampleBits: 8       //输入采样数位 8, 16
+            , inputSampleBits: 16       //输入采样数位 8, 16
             , outputSampleRate: config.sampleRate    //输出采样率
             , oututSampleBits: config.sampleBits       //输出采样数位 8, 16
             , input: function (data) {
@@ -103,6 +103,7 @@
                 }
 
                 return new Blob([data], { type: 'audio/wav' });
+                // return data.buffer.slice()
             }
         };
 
@@ -131,8 +132,19 @@
         //上传
         this.upload = function (url, callback) {
             var fd = new FormData();
-            fd.append("audioData", this.getBlob());
-            alert(fd);
+            // var reader = new FileReader();
+            // reader.addEventListener("loadend", function() {
+            //    // reader.result 包含转化为类型数组的blob
+            // });
+            // // reader.readAsArrayBuffer(audioData.encodeWAV());
+            // reader.readAsBinaryString(audioData.encodeWAV());
+            // console.info(reader)
+            // alert(reader)
+            var blob=this.getBlob();
+            // console.log(blob);
+            // alert(blob)
+            fd.append("audioData", blob);
+            // alert(fd);
             var xhr = new XMLHttpRequest();
             if (callback) {
                 xhr.upload.addEventListener("progress", function (e) {

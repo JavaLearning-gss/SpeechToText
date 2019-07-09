@@ -3,6 +3,10 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import base64
 from aip import AipSpeech
+import wave
+import numpy as np
+import scipy.signal as signal
+
 # Create your views here.
 
 data = str()
@@ -14,9 +18,19 @@ def index(request):
     print(count)
     if request.method == "POST":
         # print(request.method)
-        audio_file=open(r'../../demo1.wav','rb').read()
+        # audio_file=open(r'../../demo1.wav','rb').read()
         # print(audio_file)
-        # Blob = request.FILES['audioData']
+        Blob = request.FILES['audioData'].read()
+
+        f=wave.open(r'../../demo.wav','wb')
+
+        f.setnchannels(1)
+        f.setsampwidth(2)
+        f.setframerate(16000)
+        f.writeframes(Blob)
+        f.close()
+        
+        audio_file=open(r'../../demo.wav','rb').read()
 
         """ 你的 APPID AK SK """
         APP_ID = '16710665'

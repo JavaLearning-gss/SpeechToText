@@ -19,6 +19,7 @@ f.setsampwidth(2)
 f.setframerate(framerate)
 # 将wav_data转换为二进制数据写入文件
 f.writeframes(wave_data.tostring())
+print(wave_data.tostring())
 f.close()
 
 f = wave.open(r"./demo.wav", "rb")

@@ -43,8 +43,8 @@ function stopRecording(a, b) {
     console.info(Object.prototype.toString.call(WAV_audio));
     // console.info(WAV_audio);
     // base64_WAV_audio = blobToDataURL(WAV_audio);
-    // recorder.play(audio);
     uploadAudio();
+    recorder.play(audio);
 }
 
 function playRecording() {
@@ -60,7 +60,7 @@ function uploadAudio() {
             case 'ok':
                 //alert(e.target.responseText);
                 //alert("上传成功");
-                window.location.href = "http://127.0.0.1:8000";
+                // window.location.href = "http://127.0.0.1:8000";
                 break;
             case 'error':
                 alert("上传失败");

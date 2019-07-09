@@ -40,7 +40,7 @@ def index(request):
         data=return_file.get('result')
         return HttpResponse(return_file.get('result'))
     else:
-        return HttpResponse(data)
+        return HttpResponse('GET')
         # print(request.method)
         # audio_file=open(r'../../demo1.wav','rb').read()
         # print(audio_file)

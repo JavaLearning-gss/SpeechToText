@@ -5,8 +5,8 @@
 
     var HZRecorder = function (stream, config) {
         config = config || {};
-        config.sampleBits =  16;      //采样数位 8, 16
-        config.sampleRate =  16000;   //采样率(1/6 44100)
+        config.sampleBits = 16;      //采样数位 8, 16
+        config.sampleRate = 16000;   //采样率(1/6 44100)
 
         var context = new (window.webkitAudioContext || window.AudioContext)();
         var audioInput = context.createMediaStreamSource(stream);
@@ -89,14 +89,14 @@
                 data.setUint32(offset, dataLength, true); offset += 4;
                 // 写入采样数据 
                 if (sampleBits === 8) {
-                    for (var i = 0; i < bytes.length; i++, offset++) {
+                    for (var i = 0; i < bytes.length; i++ , offset++) {
                         var s = Math.max(-1, Math.min(1, bytes[i]));
                         var val = s < 0 ? s * 0x8000 : s * 0x7FFF;
                         val = parseInt(255 / (65535 / (val + 32768)));
                         data.setInt8(offset, val, true);
                     }
                 } else {
-                    for (var i = 0; i < bytes.length; i++, offset += 2) {
+                    for (var i = 0; i < bytes.length; i++ , offset += 2) {
                         var s = Math.max(-1, Math.min(1, bytes[i]));
                         data.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
                     }
@@ -132,19 +132,8 @@
         //上传
         this.upload = function (url, callback) {
             var fd = new FormData();
-            // var reader = new FileReader();
-            // reader.addEventListener("loadend", function() {
-            //    // reader.result 包含转化为类型数组的blob
-            // });
-            // // reader.readAsArrayBuffer(audioData.encodeWAV());
-            // reader.readAsBinaryString(audioData.encodeWAV());
-            // console.info(reader)
-            // alert(reader)
-            var blob=this.getBlob();
-            // console.log(blob);
-            // alert(blob)
+            var blob = this.getBlob();
             fd.append("audioData", blob);
-            // alert(fd);
             var xhr = new XMLHttpRequest();
             if (callback) {
                 xhr.upload.addEventListener("progress", function (e) {
@@ -160,7 +149,15 @@
                     callback('cancel', e);
                 }, false);
             }
-            xhr.open("POST", url);
+            // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            xhr.onreadystatechange = function () {
+                // console.log(xhr.readyState);
+                if (xhr.readyState == 4) {
+                    // 把服务器端返回的信息显示到页面上
+                    alert(xhr.responseText);
+                }
+            }
+            xhr.open('POST', url, true);
             xhr.send(fd);
         }
 

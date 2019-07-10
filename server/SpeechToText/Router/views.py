@@ -1,13 +1,8 @@
 # from django.shortcuts import render
-from django.http import JsonResponse, HttpResponse
+from django.http import HttpResponse
+from django.template.loader import get_template
 from django.views.decorators.csrf import csrf_exempt
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
-import base64
 from aip import AipSpeech
-import wave
-import numpy as np
-import scipy.signal as signal
 
 # Create your views here.
 
@@ -30,3 +25,7 @@ def index(request):
 
         return HttpResponse(return_file.get('result'))
 
+    else:
+        template = get_template('demo.html')
+        html = template.render(locals())
+        return HttpResponse(html)

@@ -28,7 +28,7 @@ SECRET_KEY = '_&7spfn-$(k5*#yrr%hcsmi_g0^fpy&ixj&#-26xr9077tp33='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'SpeechToText.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +71,12 @@ TEMPLATES = [
         },
     },
 ]
+
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 WSGI_APPLICATION = 'SpeechToText.wsgi.application'
 

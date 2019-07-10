@@ -6,11 +6,26 @@ from aip import AipSpeech
 
 # Create your views here.
 
+CHINA_CODE = ['CHN', 'HKG', 'TWN', 'MAC']
+CHINA_LANG = ['CHM', 'CHT']
+
 
 @csrf_exempt
 def index(request):
 
     if request.method == "POST":
+
+        lang = request.POST.get('lang')
+        countryCode = request.POST.get('countryCode')
+        SENT_DICT = {'dev_pid': 1536, }
+
+        if lang!='null':
+            if (countryCode in CHINA_CODE)and(countryCode != 'HKG'):
+                SENT_DICT['dev_pid'] = 1537
+            elif lang == 'CHT' and countryCode == 'HKG':
+                SENT_DICT['dev_pid'] = 1637
+            else:
+                SENT_DICT['dev_pid'] = 1737
 
         """ 你的 APPID AK SK """
         APP_ID = '16710665'
@@ -19,9 +34,8 @@ def index(request):
 
         client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
-        return_file = client.asr(request.FILES['audioData'].read(), 'wav', 16000, {
-            'dev_pid': 1536,
-        })
+        return_file = client.asr(
+            request.FILES['audioData'].read(), 'wav', 16000, SENT_DICT)
 
         return HttpResponse(return_file.get('result'))
 

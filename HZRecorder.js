@@ -131,9 +131,22 @@
 
         //上传
         this.upload = function (url, callback) {
+            function getQueryString(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                var r = window.location.search.substr(1).match(reg);
+
+                if (r != null) {
+                    return unescape(r[2]);
+                }
+                return null;
+            }
+            var lang = getQueryString('Lang');
+            var countryCode = getQueryString('countryCode');
             var fd = new FormData();
             var blob = this.getBlob();
             fd.append("audioData", blob);
+            fd.append("lang", lang);
+            fd.append("countryCode", countryCode);
             var xhr = new XMLHttpRequest();
             if (callback) {
                 xhr.upload.addEventListener("progress", function (e) {
@@ -154,8 +167,14 @@
                 // console.log(xhr.readyState);
                 if (xhr.readyState == 4) {
                     // 把服务器端返回的信息显示到页面上
-                    // alert(xhr.responseText);
-                    document.getElementById('demo').value = xhr.responseText;
+                    RESOURCE = "内容不清晰，请重试。"
+                    // 检查内容是否合法
+                    if (xhr.responseText == 'None') {
+                        alert(RESOURCE)
+                    }
+                    else {
+                        document.getElementById('demo').value = xhr.responseText;
+                    }
                 }
             }
             xhr.open('POST', url, true);

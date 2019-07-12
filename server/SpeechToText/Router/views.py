@@ -9,7 +9,6 @@ from aip import AipSpeech
 CHINA_CODE = ['CHN', 'HKG', 'TWN', 'MAC']
 CHINA_LANG = ['CHM', 'CHT']
 
-
 @csrf_exempt
 def index(request):
 
@@ -19,15 +18,17 @@ def index(request):
         countryCode = request.POST.get('countryCode')
         SENT_DICT = {'dev_pid': 1536, }
 
-        if lang!='null':
-            if (countryCode in CHINA_CODE)and(countryCode != 'HKG'):
-                SENT_DICT['dev_pid'] = 1537
-            elif lang == 'CHT' and countryCode == 'HKG':
-                SENT_DICT['dev_pid'] = 1637
+        # NEW_LOGIC
+        if lang:
+            if lang in CHINA_LANG:
+                if countryCode == "HKG":
+                    SENT_DICT['dev_pid'] = 1637
+                else:
+                    SENT_DICT['dev_pid'] = 1537
             else:
                 SENT_DICT['dev_pid'] = 1737
 
-        """ 你的 APPID AK SK """
+        # """ 你的 APPID AK SK """
         APP_ID = '16710665'
         API_KEY = 'lAm7pwiagTIHIqksaTRQILnL'
         SECRET_KEY = 'w4KIhKEKrmiNq4kBtD7Cu0hVjXgO2b1N'

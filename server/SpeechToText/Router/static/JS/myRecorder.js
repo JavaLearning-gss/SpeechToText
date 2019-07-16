@@ -52,7 +52,7 @@ function playRecording() {
 }
 
 function uploadAudio() {
-    recorder.upload("http://10.23.21.50:8080/", function (state, e) {
+    recorder.upload("http://47.106.207.64:8080/", function (state, e) {
         switch (state) {
             case 'uploading':
                 //var percentComplete = Math.round(e.loaded * 100 / e.total) + '%';

@@ -38,9 +38,11 @@ def index(request):
         return_file = client.asr(
             request.FILES['audioData'].read(), 'wav', 16000, SENT_DICT)
 
+        print(return_file) 
+
         return HttpResponse(return_file.get('result'))
 
-    else:
-        template = get_template('demo.html')
-        html = template.render(locals())
-        return HttpResponse(html)
+    # else:
+    #     template = get_template('demo.html')
+    #     html = template.render(locals())
+    #     return HttpResponse(html)

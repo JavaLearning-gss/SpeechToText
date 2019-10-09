@@ -1,0 +1,104 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Oct  7 20:23:04 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Oct  7 22:54:48 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Oct  7 23:07:50 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Oct  7 23:11:36 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Oct  7 23:13:07 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Oct  7 23:33:39 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Oct  8 00:55:59 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Oct  8 01:13:25 2019] ***
+compiled with version: 7.3.0 on 22 July 2019 16:51:41
+os: Linux-5.0.0-31-generic #33~18.04.1-Ubuntu SMP Tue Oct 1 10:20:39 UTC 2019
+nodename: lsgz-Latitude-E7240
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/lsgz/SpeechToText/server/SpeechToText
+writing pidfile to uwsgi.pid
+detected binary path: /home/lsgz/anaconda3/envs/SpeechToText/bin/uwsgi
+chdir() to /home/SpeechToText/server/SpeechToText 　　　　　# 指定项目的目录
+chdir(): No such file or directory [core/uwsgi.c line 2623]

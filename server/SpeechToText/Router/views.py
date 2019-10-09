@@ -42,7 +42,7 @@ def index(request):
 
         return HttpResponse(return_file.get('result'))
 
-    # else:
-    #     template = get_template('demo.html')
-    #     html = template.render(locals())
-    #     return HttpResponse(html)
+    else:
+        template = get_template('demo.html')
+        html = template.render(locals())
+        return HttpResponse(html)

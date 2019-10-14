@@ -33,7 +33,7 @@ function playRecording() {
 }
 
 function uploadAudio() {
-    recorder.upload("https://lightspeech.xyz:443/", function (state, e) {
+    recorder.upload("https://lightspeech.xyz.:8080/", function (state, e) {
         switch (state) {
             case 'uploading':
                 //var percentComplete = Math.round(e.loaded * 100 / e.total) + '%';
